@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">番茄钟</h1>
+    
+    <div class="stage-indicator">
+      <span id="stage-label">专注阶段</span>
+    </div>
+    
+    <div class="timer-container">
+      <svg class="progress-ring" width="260" height="260">
+        <circle
+          class="progress-ring-bg"
+          cx="130"
+          cy="130"
+          r="120"
+          stroke="#2d2d2d"
+          stroke-width="10"
+          fill="none"
+        />
+        <circle
+          class="progress-ring-circle"
+          id="progress-ring"
+          cx="130"
+          cy="130"
+          r="120"
+          stroke="#e74c3c"
+          stroke-width="10"
+          fill="none"
+          stroke-linecap="round"
+          transform="rotate(-90 130 130)"
+        />
+      </svg>
+      <div class="timer-display">
+        <span id="time-display">25:00</span>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button id="start-btn" class="btn btn-primary">开始</button>
+      <button id="reset-btn" class="btn btn-secondary">重置</button>
+    </div>
+    
+    <div class="settings">
+      <div class="setting-item">
+        <label for="focus-duration">专注时长（分钟）:</label>
+        <input type="number" id="focus-duration" min="1" max="120" value="25">
+      </div>
+      <div class="setting-item">
+        <label for="break-duration">休息时长（分钟）:</label>
+        <input type="number" id="break-duration" min="1" max="60" value="5">
+      </div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
